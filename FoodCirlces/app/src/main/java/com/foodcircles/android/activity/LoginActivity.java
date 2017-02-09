@@ -42,6 +42,7 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        Log.i("CHEB",this.getClass().getSimpleName());
 		setContentView(R.layout.activity_login);
 		boolean newAccount = getIntent().getBooleanExtra("new", true);
 

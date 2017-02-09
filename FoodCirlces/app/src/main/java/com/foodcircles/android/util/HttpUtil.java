@@ -19,7 +19,9 @@ import java.util.List;
 public class HttpUtil {
 //	private static String DOMAIN = "http://192.168.1.30:8888/"; //home
 //	private static String DOMAIN = "http://10.0.2.2:8888/";
-	private static String DOMAIN = "http://10.1.4.56:8888/"; //work
+//	private static String DOMAIN = "http://10.1.4.56:8888/"; //work
+    private static String DOMAIN = "http://joinfoodcircles.org:8888/"; //work
+
 	public static boolean postNoResponse(String servlet, List<BasicNameValuePair> params) throws ClientProtocolException, IOException {
 
 		HttpResponse response = post(servlet, params);

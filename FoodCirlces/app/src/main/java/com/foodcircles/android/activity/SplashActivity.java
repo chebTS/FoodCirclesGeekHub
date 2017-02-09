@@ -3,6 +3,7 @@ package com.foodcircles.android.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -25,20 +26,21 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        Log.i("CHEB",this.getClass().getSimpleName());
 		setContentView(R.layout.activity_splash);
 
 		mProgressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		mProgressBar.setVisibility(View.INVISIBLE);
 		mInfo = FacebookInfo.get(this);
 		String userID = mInfo.getID();
-		if (userID == null) {
+		/*TODO if (userID == null) {
 			if (mInfo.getToken() != null ) {
 				Intent i = new Intent(this, CirclesActivity.class);
 				startActivity(i);
 			}
 			mProgressBar.setActivated(true);
 			mProgressBar.setVisibility(View.VISIBLE);
-			/*TODO Session.openActiveSession(SplashActivity.this, true, new Session.StatusCallback() {
+			Session.openActiveSession(SplashActivity.this, true, new Session.StatusCallback() {
 
 				@Override
 				public void call(Session session, SessionState state, Exception exception) {
@@ -59,10 +61,11 @@ public class SplashActivity extends Activity {
 						});
 					}
 				}
-			});*/
+			});
 		} else {
 			launchLogin(false);
-		}
+		}*/
+        launchLogin(true);
 	}
 
 	private void launchLogin(boolean isNew) {
